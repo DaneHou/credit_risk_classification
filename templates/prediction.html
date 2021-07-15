@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Default Prediction</title>
+     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="{{url_for('static', filename='images/logo.svg')}}">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="/"><img src="{{url_for('static', filename='images/logo.svg')}}" alt="alternative"></a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+         <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="/"><img src="{{url_for('static', filename='images/logo.svg')}}"		alt="alternative"></a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Predict">PREDICT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="report">VISUALIZE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Insights">INSIGHTS</a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav> <!-- end of navbar -->
+	    </nav> <!-- end of navbar -->
+
+    <!-- end of navbar -->
+
+
+    <!-- Header -->
+    <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Default Prediciton</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <!-- Breadcrumbs -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                        <a href="/">Home</a><i class="fa fa-angle-double-right"></i><span>Predict Dafault Probability</span>
+                    </div> <!-- end of breadcrumbs -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of breadcrumbs -->
+
+
+    <!-- Terms Content -->
+    <div id="Predict" class="ex-basic-2">
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp Please Fill in the details to get the Defalut Probability.</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+							<!-- Contact Form -->
+								<form id="contactForm" data-toggle="validator" data-focus="false" action="{{ url_for('prediction') }}" method="POST">
+								<div class="form-group">
+									<input name="er_credit_open_date" type="date" class="form-control-input" id="er_credit_open_date">
+									<label class="label-control" for="er_credit_open_date">Earliest Credit Line Open Date</label>
+									<div class="help-block with-errors"></div>
+								</div>
+
+
+
+								<div class="form-group">
+									<input name="fico_avg" type="number" min="600" max="850" class="form-control-input" id="fico_avg" required>
+									<label class="label-control" for="fico_avg">Fico Score</label>
+									<div class="help-block with-errors"></div>
+								</div>
+
+
+                                <div class="form-group">
+                                    <input name="sub_grade" list="sub_grade" class="form-control-input" required select>
+                                    <label class="label-control" for="sub_grade">Grades</label>
+                                    <datalist id="sub_grade">
+                                    <option value="A1">
+                                    <option value="A2">
+                                    <option value="A3">
+                                    <option value="A4">
+                                    <option value="A5">
+                                    <option value="B1">
+                                    <option value="B2">
+                                    <option value="B3">
+                                    <option value="B4">
+                                    <option value="B5">
+                                    <option value="C1">
+                                    <option value="C2">
+                                    <option value="C3">
+                                    <option value="C4">
+                                    <option value="C5">
+                                    <option value="D1">
+                                    <option value="D2">
+                                    <option value="D3">
+                                    <option value="D4">
+                                    <option value="D5">
+                                    <option value="E1">
+                                    <option value="E2">
+                                    <option value="E3">
+                                    <option value="E4">
+                                    <option value="E5">
+                                    <option value="F1">
+                                    <option value="F2">
+                                    <option value="F3">
+                                    <option value="F4">
+                                    <option value="F5">
+                                    <option value="G1">
+                                    <option value="G2">
+                                    <option value="G3">
+                                    <option value="G4">
+                                    <option value="G5">
+
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>                                
+
+
+								<div class="form-group">
+									<input name="funded_amnt" class="form-control-input" type="number" min="500" max="40000" id="funded_amnt" required>
+									<label class="label-control" for="funded_amnt">Funded Amount ($500 to $40,000):</label>
+									<div class="help-block with-errors"></div>
+								</div>
+
+
+
+                                <div class="form-group">
+                                    <input name="addr_state" list="states" class="form-control-input" required select>
+                                    <label class="label-control" for="addr_state">States</label>
+                                    <datalist id="states">
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District Of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+
+								<div class="form-group">
+									<input name="emp_length" list="emp_length" class="form-control-input" required select>
+									<label class="label-control" for="emp_length">Employment Length</label>
+									<datalist id="emp_length">
+									<option value="< 1 year">
+									<option value="1 year">
+									<option value="2 years">
+									<option value="3 years">
+									<option value="4 years">
+									<option value="5 years">
+                                    <option value="6 years">
+                                    <option value="7 years">
+                                    <option value="8 years">
+                                    <option value="9 years">
+                                    <option value="10+ years">
+                                    <option value="unknown">
+
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+								
+
+
+                                <div class="form-group">
+                                    <input name="annual_inc" type="number" min="0" max="190000" class="form-control-input" id="annual_inc" required>
+                                    <label class="label-control" for="annual_inc">Annual Income:</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+
+                    </div> <!-- end of contact form -->
+                </div> 	<!-- end of text-container -->
+				                <div class="col-lg-6">
+                    <div class="text-container">
+							<!-- Contact Form -->
+
+                                <div class="form-group">
+                                    <input name="home_ownership" list="homes" class="form-control-input" required select>
+                                    <label class="label-control" for="home_ownership">Home Ownership</label>
+                                    <datalist id="homes">
+                                    <option value="MORTGAGE">
+                                    <option value="RENT">
+                                    <option value="OWN">
+                                    <option value="ANY">
+                                    <option value="OTHER">
+                                    <option value="NONE">
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input name="purpose" list="purpose" class="form-control-input" required select>
+                                    <label class="label-control" for="purpose">Purpose</label>
+                                    <datalist id="purpose">
+                                    <option value="Credit Card">
+                                    <option value="Debt Consolidation">
+                                    <option value="Education">
+                                    <option value="Home Improvement">
+                                    <option value="House">
+                                    <option value="Major Purchase">
+                                    <option value="Medical">
+                                    <option value="Moving">
+                                    <option value="Renewable Energy">
+                                    <option value="Small Business">
+                                    <option value="Vacation">
+                                    <option value="Wedding">
+                                    <option value="Other">
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+
+
+								<div class="form-group">
+									<input name="dti" type="number" min="0"  class="form-control-input" id="dti" required>
+									<label class="label-control" for="dti">Debt to Income:</label>
+									<div class="help-block with-errors"></div>
+								</div>
+
+
+                                <div class="form-group">
+                                    <input name="int_rate" type="number" min="0"  class="form-control-input" id="int_rate" required>
+                                    <label class="label-control" for="int_rate">Interests Rate:</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+
+								<div class="form-group">
+									<input name="pub_rec_bankruptcies" type="number" min="0"  class="form-control-input" id="pub_rec_bankruptcies" required>
+									<label class="label-control" for="total_acc">Public Records of Bankruptcies:</label>
+									<div class="help-block with-errors"></div>
+								</div>
+
+
+								<div class="form-group">
+									<input name="verification_status" list="verf_list" class="form-control-input" required select>
+									<label class="label-control" for="verification_status">Verification Status</label>
+									<datalist id="verf_list">
+									<option value="Source Verified">
+									<option value="Verified">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>	
+
+                                
+                                <div class="form-group">
+                                    <input name="application_type" list="app_list" class="form-control-input" required select>
+                                    <label class="label-control" for="application_type">Application Type</label>
+                                    <datalist id="app_list">
+                                    <option value="Joint App">
+                                    <option value="Individual">
+                                    </datalist>
+                                    <div class="help-block with-errors"></div>
+                                </div>  
+
+
+<!--                                 <div class="form-group">
+                                    <input name="data_file">
+                                    <label class="label-control" for="data_file">Multiple People in one File</label>
+                                
+                                <form action="/action_page.php">
+                                    <input type="file" id="myFile" name="filename">
+                                    <input type="submit">
+                                </form>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>   -->
+								
+                    </div> <!-- end of contact form -->
+					</div> 	<!-- end of text-container -->
+
+                    <button type="submit" class="form-control-submit-button">MAKE PREDICTION</button>
+					</form>
+					</div> <!-- end of container -->
+
+				<div class="result" align="center">
+						{% if result %}
+						{% for variable, value in original_input.items() %}
+						<br><b>{{ variable }}</b> : {{ value }}
+						{% endfor %}
+						<br>
+						<br> Default Prediction:
+						<p style="font-size:20px">{{ result }}</p>
+						{% endif %}
+				</div>
+		</div>
+    </div> <!-- end of ex-basic -->
+    <!-- end of terms content -->
+ 	  <!-- Details 2 -->
+	<div id="Insights" class="tabs">
+            <div class="row">
+      
+	  <div class="area-1">
+		
+
+            <div class="tabs-container">
+                
+                <!-- Tabs Links -->
+                <ul class="nav nav-tabs" id="ariaTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-th"></i>ROC AUC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-th"></i>Precision Recall</a>
+                    </li>
+                  
+                </ul>
+                <!-- end of tabs links -->
+                
+                <!-- Tabs Content -->
+                <div class="tab-content" id="ariaTabsContent">
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <h4>ROC AUC Score</h4>
+                        <p>The following graph shows the ROC AUC Curve for different Machine Learning Models. XGBoost gives the best AUC.</p>
+                        
+                        <!-- Progress Bars -->
+                         <div class="col-lg-5 col-xl-6">
+                    <div class="image-container">
+                        <img class="card-image" src="{{url_for('static', filename='images/roc_curve_all_models.png')}}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                        <!-- end of progress bars -->
+                        
+                    </div> <!-- end of tab-pane --> 
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                        <h4>Precission Recall Score </h4>
+                        <p>The following graph shows the Precision Recall Curve for different Machine Learning Models. </p>
+                        
+                       <div class="col-lg-5 col-xl-6">
+                    <div class="image-container">
+                        <img class="card-image" src="{{url_for('static', filename='images/prc_curve_all_models.png')}}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                  
+                    <!-- end of tab -->
+
+                </div> <!-- end of tab-content -->
+                <!-- end of tabs content -->
+
+            </div> <!-- end of tabs-container -->
+        </div>
+		<div class="area-2">
+		
+
+            <div class="tabs-container">
+                
+                <!-- Tabs Links -->
+                <ul class="nav nav-tabs" id="ariaTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="true"><i class="fas fa-th"></i>Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false"><i class="fas fa-th"></i>Confidence Interval</a>
+                    </li>
+                  
+                </ul>
+                <!-- end of tabs links -->
+                
+                <!-- Tabs Content -->
+                <div class="tab-content" id="ariaTabsContent">
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade show active" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                        <h4>XGBoost Feature Weights</h4>
+                        <p>The following graph gives the feature importance to predict the Loan Defaults.</p>
+                        
+                        <!-- Progress Bars -->
+                         <div class="col-lg-5 col-xl-6">
+                    <div class="image-container">
+                        <img class="card-image" src="{{url_for('static', filename='images/features_weight.PNG')}}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                        <!-- end of progress bars -->
+                        
+                    </div> <!-- end of tab-pane --> 
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="tab-4">
+                        <h4>XGBoost Confidence Interval</h4>
+                        <p>As we can see from the graph testing the model on random selection of subset of the lending data, AUC score everytime was around 0.71.</p>
+                        
+                       <div class="col-lg-5 col-xl-6">
+                    <div class="image-container">
+                        <img class="card-image" src="{{url_for('static', filename='images/threshold_Individual.png')}}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                  
+
+                </div> <!-- end of tab-content -->
+                <!-- end of tabs content -->
+
+            </div> <!-- end of tabs-container -->
+        </div>
+		</div>
+    </div> <!-- end of tabs -->
+    <!-- end of details 2 -->
+
+
+
+
+
+   <!-- end of copyright --> 
+    <!-- end of copyright -->
+    <!-- Scripts -->
+     <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/popper.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/jquery.magnific-popup.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/morphext.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/isotope.pkgd.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/validator.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/scripts.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+
+</body>
+</html>
