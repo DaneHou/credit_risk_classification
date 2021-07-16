@@ -7,4 +7,5 @@ This project aims to develop a robust module for predicting the propability of d
 
 
 # Credits
-Thanks to https://github.com/ikunal95/loan-default-prediction
+- Thanks to teammates at Techlent
+- Thanks to https://github.com/ikunal95/loan-default-prediction
